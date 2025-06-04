@@ -11,13 +11,6 @@
       style="-fx-padding: 20; -fx-background-color: #E9DEDE;">
     
     <!-- TABS -->
-    <HBox spacing="20" alignment="CENTER" style="-fx-padding: 0 0 10 0;">
-        <Button text="Principal" style="-fx-background-color: transparent; -fx-font-size: 14px; -fx-underline: true;"/>
-        <Button text="Donar" style="-fx-background-color: transparent; -fx-font-size: 14px; -fx-text-fill: #666;"/>
-        <Button text="Historial" style="-fx-background-color: transparent; -fx-font-size: 14px; -fx-text-fill: #666;"/>
-        <Button text="Foro" style="-fx-background-color: transparent; -fx-font-size: 14px; -fx-text-fill: #666;"/>
-        <Button text="Cuenta" style="-fx-background-color: transparent; -fx-font-size: 14px; -fx-text-fill: #666;"/>
-    </HBox>
     
     <!-- CAROUSEL -->
     <StackPane style="-fx-background-color: #000000; -fx-padding: 40; -fx-background-radius: 5;" VBox.vgrow="ALWAYS">
