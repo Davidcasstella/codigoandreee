@@ -17,7 +17,7 @@ public class ChatManager {
 
     private static final Map<String, StringBuilder> historialMensajes = new HashMap<>();
 
-    public static void abrirChatPrivadoCon(Usuario usuario, ActionEvent event) {
+    public static void abrirChatPrivadoCon(Usuarioo usuario, ActionEvent event) {
     try {
         FXMLLoader loader = new FXMLLoader(ChatManager.class.getResource("/com/example/view/ChatPrivadoView.fxml"));
         Parent root = loader.load();
@@ -35,13 +35,13 @@ public class ChatManager {
     }
 }
 
-    public static void guardarMensaje(Usuario usuario, String mensaje) {
+    public static void guardarMensaje(Usuarioo usuario, String mensaje) {
         StringBuilder historial = historialMensajes.computeIfAbsent(usuario.getCorreo(), k -> cargarHistorialDesdeArchivo(k));
         historial.append(mensaje).append("\n");
         guardarHistorialEnArchivo(usuario.getCorreo(), historial);
     }
 
-    public static StringBuilder obtenerHistorial(Usuario usuario) {
+    public static StringBuilder obtenerHistorial(Usuarioo usuario) {
         return historialMensajes.computeIfAbsent(usuario.getCorreo(), k -> cargarHistorialDesdeArchivo(k));
     }
 

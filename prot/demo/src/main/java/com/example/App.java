@@ -21,4 +21,9 @@ public class App extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+    public static void setRoot(String string) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setRoot'");
+    }
 }

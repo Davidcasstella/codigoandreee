@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.model.Animal;
+import com.example.model.Animall;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -21,18 +21,18 @@ public class DonarController {
 
     @FXML
     public void initialize() {
-        List<Animal> animales = Arrays.asList(
-            new Animal("Max", "Cachorro activo", "Perro", "Disponible", "/images/max.png"),
-            new Animal("Luna", "Gatita tierna", "Gato", "Adoptada", "/images/luna.png"),
-            new Animal("Peppa", "Cerdita valiente", "Cerdo", "Disponible", "/images/peppa.png")
+        List<Animall> animales = Arrays.asList(
+            new Animall("Max", "Cachorro activo", "Perro", "Disponible", "/images/max.png"),
+            new Animall("Luna", "Gatita tierna", "Gato", "Adoptada", "/images/luna.png"),
+            new Animall("Peppa", "Cerdita valiente", "Cerdo", "Disponible", "/images/peppa.png")
         );
 
-        for (Animal animal : animales) {
+        for (Animall animal : animales) {
             animalList.getChildren().add(createAnimalCard(animal));
         }
     }
 
-    private HBox createAnimalCard(Animal animal) {
+    private HBox createAnimalCard(Animall animal) {
         Label nameLabel = new Label(animal.getNombre());
         nameLabel.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
         

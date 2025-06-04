@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.model.Usuario;
+import com.example.model.Usuarioo;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -20,12 +20,12 @@ public class GestionPerfilController {
     @FXML private Button btnEditar;
     @FXML private Button btnActualizar;
 
-    private Usuario usuario;
+    private Usuarioo usuario;
 
     @FXML
     public void initialize() {
         // Datos de ejemplo
-        usuario = new Usuario("Juan Pérez", "juan.perez@gmail.com", "1234-5678", "Sogamoso", 25);
+        usuario = new Usuarioo("Juan Pérez", "juan.perez@gmail.com", "1234-5678", "Sogamoso", 25);
         usuario.setBiografia("Lorem ipsum dolor sit amet...");
         usuario.setMetas("• Ser mejor voluntario\n• Ayudar más");
         usuario.setFrustraciones("Falta de recursos");

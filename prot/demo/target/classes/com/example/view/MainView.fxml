@@ -15,18 +15,33 @@
 
     <!-- HEADER -->
     <top>
-        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #FFFFFF; -fx-padding: 10 20 10 20;">
+        <HBox spacing="2" alignment="CENTER_LEFT" style="-fx-background-color: #FFFFFF; -fx-padding: 10 20 10 20;">
             <!-- Se elimina el Region HBox.hgrow="ALWAYS" para evitar el centrado -->
             <HBox alignment="CENTER_LEFT" spacing="5">
-                <Button text="←" style="-fx-background-color: transparent; -fx-font-size: 16px;"/>
-                <Button text="→" style="-fx-background-color: transparent; -fx-font-size: 16px;"/>
-                <Button text="⟳" style="-fx-background-color: transparent; -fx-font-size: 16px;"/>
+                    <Button text="←" onAction="#Antesssss"
+                            style="-fx-font-size: 12px; -fx-padding: 4px; -fx-min-width: 30px; -fx-min-height: 30px; 
+                                   -fx-background-color: rgb(100, 103, 107); -fx-text-fill: white; -fx-border-radius: 15px;" />
+                    <Button text="→" onAction="#Siguienteeeee"
+                            style="-fx-font-size: 12px; -fx-padding: 4px; -fx-min-width: 30px; -fx-min-height: 30px; 
+                                   -fx-background-color: rgb(100, 103, 107); -fx-text-fill: white; -fx-border-radius: 15px;" />
+                    <Button text="↻" onAction="#reloadPageeeee"
+                            style="-fx-font-size: 12px; -fx-padding: 4px; -fx-min-width: 30px; -fx-min-height: 30px;" />
             </HBox>
 
             <!-- Logo y Títulos alineados a la izquierda -->
-            <VBox spacing="2" alignment="CENTER_LEFT" style="-fx-padding: 10;">
+            <VBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10;">
                 <Label text="FUNDACIÓN GARRAS Y BIGOTES" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
                 <Label text="Bienvenido User5678 (Voluntario)" style="-fx-font-size: 11px; -fx-text-fill: #666;"/>
+                  <!-- Panel con pestañas -->
+            <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" style="-fx-background-color: transparent;">
+                
+                <Tab fx:id="tabPrincipal"  text="Principal" />          
+                <Tab fx:id="tabDonar"  text="Donar" />
+                
+                <Tab fx:id="tabHistorial" text="Historial" />
+                <Tab fx:id="tabForo" text="Foro" />
+                <Tab fx:id="tabGestionar" text="GestionarCuenta" />
+            </TabPane>
             </VBox>
 
             <!-- Resto del header con la etiqueta y botón -->

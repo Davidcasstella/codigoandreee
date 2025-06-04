@@ -1,10 +1,10 @@
 package com.example.model;
 
-public class Comentario {
+public class Comentarioo {
     private String autor;
     private String contenido;
 
-    public Comentario(String autor, String contenido) {
+    public Comentarioo(String autor, String contenido) {
         this.autor = autor;
         this.contenido = contenido;
     }

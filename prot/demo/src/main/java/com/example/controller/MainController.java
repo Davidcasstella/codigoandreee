@@ -2,13 +2,15 @@ package com.example.controller;
 
 import java.io.IOException;
 
-import com.example.model.Animal;
+import com.example.App;
+import com.example.model.Animall;
 import com.example.model.ChatManager;
 import com.example.model.Donacion;
-import com.example.model.Usuario;
+import com.example.model.Usuarioo;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
@@ -37,19 +39,93 @@ public class MainController {
 
     @FXML
     private Button btnLogout;
+    @FXML private Tab tabDonar;
+    @FXML
+    private Tab tabPrincipal;
+    @FXML
+    private Tab tabHistorial;
+    @FXML
+    private Tab tabForo;
+    @FXML
+    private Tab tabGestionar;
+
+    
+
 
     @FXML
     public void initialize() {
         loadView("PrincipalView.fxml");
 
-        btnPrincipal.setOnAction(e -> loadView("PrincipalView.fxml"));
-        btnGestionPerfil.setOnAction(e -> loadGestionPerfil());
-        btnDonar.setOnAction(e -> loadDonarView());
-        btnHistorial.setOnAction(e -> loadHistorialView());
-        btnForo.setOnAction(e -> loadForoView());
-        btnMensajes.setOnAction(e -> loadMensajesView());
-        btnLogout.setOnAction(e -> handleLogout());
+
+
+
+       // Agregar listener a la pestaña 'Donar'
+    tabDonar.setOnSelectionChanged(e -> {
+        if (tabDonar.isSelected()) {
+            loadDonarView();
+        }
+    });
+     // Listener para la pestaña 'Principal'
+    tabPrincipal.setOnSelectionChanged(e -> {
+        if (tabPrincipal.isSelected()) {
+            loadPrincipalView();
+        }
+    });
+    
+        // Listener para la pestaña 'Historial'
+        tabHistorial.setOnSelectionChanged(e -> {
+            if (tabHistorial.isSelected()) {
+                loadHistorialView();
+            }
+        });
+
+        // Listener para la pestaña 'Foro'
+        tabForo.setOnSelectionChanged(e -> {
+            if (tabForo.isSelected()) {
+                loadForoView();
+            }
+        });
+
+        // Listener para la pestaña 'Gestionar Cuenta'
+        tabGestionar.setOnSelectionChanged(e -> {
+            if (tabGestionar.isSelected()) {
+                loadGestionPerfil();
+            }
+        });
+
+    btnPrincipal.setOnAction(e -> loadView("PrincipalView.fxml"));
+    btnGestionPerfil.setOnAction(e -> loadGestionPerfil());
+    btnDonar.setOnAction(e -> loadDonarView());
+    btnHistorial.setOnAction(e -> loadHistorialView());
+    btnForo.setOnAction(e -> loadForoView());
+    btnMensajes.setOnAction(e -> loadMensajesView());
+    btnLogout.setOnAction(e -> handleLogout());
+}
+
+
+private void loadPrincipalView() {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/view/PrincipalView.fxml"));
+        Pane view = loader.load();
+
+        // Si es necesario, configura el controlador de la vista.
+        Object controller = loader.getController();
+        if (controller instanceof ChatController) {
+            ((ChatController) controller).setMainController(this);
+        } else if (controller instanceof DonarController) {
+            ((DonarController) controller).setMainController(this);
+        } else if (controller instanceof ForoController) {
+            ((ForoController) controller).setMainController(this);
+        }
+
+        contentPane.getChildren().setAll(view);
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+}
+
+
+    
 
     public void loadView(String fxml) {
         try {
@@ -72,7 +148,8 @@ public class MainController {
             e.printStackTrace();
         }
     }
-
+    
+     
     private void loadGestionPerfil() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/view/GestionPerfilView.fxml"));
@@ -132,7 +209,7 @@ public class MainController {
         }
     }
 
-    public void loadDonacionView(Animal animal) {
+    public void loadDonacionView(Animall animal) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/view/DonacionView.fxml"));
             Pane view = loader.load();
@@ -162,7 +239,7 @@ public class MainController {
         }
     }
 
-    public void mostrarChatPrivado(Usuario usuario) {
+    public void mostrarChatPrivado(Usuarioo usuario) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/view/ChatPrivadoView.fxml"));
             Pane view = loader.load();
@@ -178,7 +255,7 @@ public class MainController {
         }
     }
 
-    public void mostrarPerfilPublico(Usuario usuario) {
+    public void mostrarPerfilPublico(Usuarioo usuario) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/view/PerfilPublicoView.fxml"));
             Pane view = loader.load();
@@ -197,5 +274,19 @@ public class MainController {
         // Aquí puedes agregar la lógica para cerrar sesión
         // Por ejemplo, volver a la pantalla de login
         System.exit(0); // Por ahora solo cerramos la aplicación
+    }
+     @FXML
+    private void Siguienteeeee() throws IOException {
+        App.setRoot("PantallaDashboard");
+    }
+
+    @FXML
+    private void reloadPageeeee() throws IOException {
+        App.setRoot("PantallaDashboard");
+    }
+
+    @FXML
+    private void Antesssss() throws IOException {
+        App.setRoot("PantallaCreaTuContraseña");
     }
 }

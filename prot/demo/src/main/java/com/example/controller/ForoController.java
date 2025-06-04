@@ -1,7 +1,7 @@
 package com.example.controller;
 
-import com.example.model.Comentario;
-import com.example.model.Usuario;
+import com.example.model.Comentarioo;
+import com.example.model.Usuarioo;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -24,7 +24,7 @@ public class ForoController implements Initializable {
     @FXML
     private TextArea contenidoArea;
 
-    private List<Comentario> comentarios = new ArrayList<>();
+    private List<Comentarioo> comentarios = new ArrayList<>();
     private MainController mainController;
 
     public void setMainController(MainController mainController) {
@@ -33,21 +33,21 @@ public class ForoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        comentarios.add(new Comentario("Juan Pérez", "¡Qué buena actividad! Me encantó ayudar."));
-        comentarios.add(new Comentario("Laura Ramírez", "¿Cuándo será la próxima reunión?"));
+        comentarios.add(new Comentarioo("Juan Pérez", "¡Qué buena actividad! Me encantó ayudar."));
+        comentarios.add(new Comentarioo("Laura Ramírez", "¿Cuándo será la próxima reunión?"));
 
         cargarComentarios();
     }
 
     private void cargarComentarios() {
         comentariosContainer.getChildren().clear();
-        for (Comentario comentario : comentarios) {
+        for (Comentarioo comentario : comentarios) {
             VBox card = crearCardComentario(comentario);
             comentariosContainer.getChildren().add(card);
         }
     }
 
-    private VBox crearCardComentario(Comentario comentario) {
+    private VBox crearCardComentario(Comentarioo comentario) {
         VBox card = new VBox(5);
         card.setPadding(new Insets(10));
         card.setStyle("-fx-background-color: #EEEEEE; -fx-border-radius: 5; -fx-background-radius: 5;");
@@ -71,7 +71,7 @@ public class ForoController implements Initializable {
     private void abrirPerfil(String nombreAutor) {
     if (mainController != null) {
         // Aquí se crea un usuario simulado con información "realista"
-        Usuario usuario = new Usuario(nombreAutor);
+        Usuarioo usuario = new Usuarioo(nombreAutor);
         usuario.setCorreo("correo@" + nombreAutor.toLowerCase().replace(" ", "") + ".com");
         usuario.setTelefono("1234567890");
         usuario.setUbicacion("Ciudad de Ejemplo");
@@ -97,7 +97,7 @@ public class ForoController implements Initializable {
             return;
         }
 
-        Comentario nuevo = new Comentario(autor, contenido);
+        Comentarioo nuevo = new Comentarioo(autor, contenido);
         comentarios.add(nuevo);
         cargarComentarios();
 

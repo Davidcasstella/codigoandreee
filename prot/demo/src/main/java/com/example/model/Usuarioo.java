@@ -1,6 +1,6 @@
 package com.example.model;
 
-public class Usuario {
+public class Usuarioo {
     private String nombre;
     private String correo;
     private String telefono;
@@ -13,7 +13,7 @@ public class Usuario {
     private String[] personalidad;
 
     // Constructor completo
-    public Usuario(String nombre, String correo, String telefono, String ubicacion, int edad) {
+    public Usuarioo(String nombre, String correo, String telefono, String ubicacion, int edad) {
         this.nombre = nombre;
         this.correo = correo;
         this.telefono = telefono;
@@ -27,7 +27,7 @@ public class Usuario {
     }
 
     
-    public Usuario(String nombre) {
+    public Usuarioo(String nombre) {
         this.nombre = nombre;
         this.correo = "";
         this.telefono = "";

@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.model.Animal;
+import com.example.model.Animall;
 import com.example.model.Donacion;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -38,7 +38,7 @@ public class HistorialController {
 
     private Donacion crearDonacionEjemplo(String nombreAnimal, String tipo, String cantidad, String estado) {
         Donacion donacion = new Donacion();
-        Animal animal = new Animal(nombreAnimal, "Descripción", "Tipo", estado, "");
+        Animall animal = new Animall(nombreAnimal, "Descripción", "Tipo", estado, "");
         donacion.setAnimal(animal);
         donacion.setTipo(tipo);
         donacion.setCantidad(cantidad);

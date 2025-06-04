@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.model.Usuario;
+import com.example.model.Usuarioo;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
@@ -22,10 +22,10 @@ public class PerfilPublicoController {
     @FXML private VBox personalidadList;
     @FXML private Circle fotoPerfil;
 
-    private Usuario usuario;
+    private Usuarioo usuario;
 
     // Establece la información del usuario en la vista pública
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Usuarioo usuario) {
         this.usuario = usuario;
 
         nombreLabel.setText(usuario.getNombre());

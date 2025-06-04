@@ -1,7 +1,7 @@
 package com.example.controller;
 
 import com.example.model.ChatManager;
-import com.example.model.Usuario;
+import com.example.model.Usuarioo;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
@@ -20,10 +20,10 @@ public class ChatController {
     @FXML
     private Label estadoLabel;
 
-    private Usuario usuarioConectado;
+    private Usuarioo usuarioConectado;
     private MainController mainController;
 
-    public void setUsuarioConectado(Usuario usuario) {
+    public void setUsuarioConectado(Usuarioo usuario) {
         this.usuarioConectado = usuario;
         if (usuario != null) {
             nombreUsuarioLabel.setText(usuario.getNombre());

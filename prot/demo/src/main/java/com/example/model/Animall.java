@@ -1,13 +1,13 @@
 package com.example.model;
 
-public class Animal {
+public class Animall {
     private String nombre;
     private String descripcion;
     private String especie;
     private String estado;
     private String imagen;
 
-    public Animal(String nombre, String descripcion, String especie, String estado, String imagen) {
+    public Animall(String nombre, String descripcion, String especie, String estado, String imagen) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.especie = especie;

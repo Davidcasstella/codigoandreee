@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.model.Animal;
+import com.example.model.Animall;
 import com.example.model.Donacion;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -17,7 +17,7 @@ public class DonacionController {
     @FXML private TextArea txtDescripcion;
     
     private MainController mainController;
-    private Animal animal;
+    private Animall animal;
     
     @FXML
     public void initialize() {
@@ -88,7 +88,7 @@ public class DonacionController {
         alert.showAndWait();
     }
     
-    public void setAnimal(Animal animal) {
+    public void setAnimal(Animall animal) {
         this.animal = animal;
         lblAnimalNombre.setText(animal.getNombre());
         

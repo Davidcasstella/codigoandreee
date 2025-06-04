@@ -4,14 +4,14 @@ import java.time.LocalDateTime;
 
 public class Donacion {
     private Long id;
-    private Animal animal;
+    private Animall animal;
     private String tipo;
     private String metodoEntrega;
     private String cantidad;
     private String descripcion;
     private String estado;
     private LocalDateTime fecha;
-    private Usuario usuario;
+    private Usuarioo usuario;
     
     // Constructores
     public Donacion() {
@@ -19,7 +19,7 @@ public class Donacion {
         this.estado = "Pendiente";
     }
     
-    public Donacion(Animal animal, String tipo, String metodoEntrega, String cantidad) {
+    public Donacion(Animall animal, String tipo, String metodoEntrega, String cantidad) {
         this();
         this.animal = animal;
         this.tipo = tipo;
@@ -36,11 +36,11 @@ public class Donacion {
         this.id = id;
     }
     
-    public Animal getAnimal() {
+    public Animall getAnimal() {
         return animal;
     }
     
-    public void setAnimal(Animal animal) {
+    public void setAnimal(Animall animal) {
         this.animal = animal;
     }
     
@@ -92,11 +92,11 @@ public class Donacion {
         this.fecha = fecha;
     }
     
-    public Usuario getUsuario() {
+    public Usuarioo getUsuario() {
         return usuario;
     }
     
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Usuarioo usuario) {
         this.usuario = usuario;
     }
     
